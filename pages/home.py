@@ -1,38 +1,32 @@
 from re import T
+from numpy import True_
 import streamlit as st
 from PIL import Image
 import pandas as pd
+import streamlit.components.v1 as stc
+
 
 
 
 def app():
 
-
-    header = st.container()
-    dataset = st.container()
-    features = st.container()
-    recommenderSystem = st.container()
-
-    with header:
-        st.title("\U0001f3ac No More Film Scrolling! \U0001f3ac")
-        img = Image.open('images/movie_posters.jpg')
-        st.image(img)
-        
-        st.subheader('The project develops a Python Recommender Systems to save time in the search of your movie tonight')
-
-    with dataset:
-        st.header('IMDb Movie Dataset')
-        st.caption('IMDd movie and movie-rating datasets found on www.kaggle.com')
-
-        movies = pd.read_csv('data/imdb_movies_clean_1st.csv')
-        st.write(movies.head())
+    st.title("\U0001f3ac No More Film Scrolling! \U0001f3ac")
+    img = Image.open('images/movie_posters.jpg')
+    
+    
+    st.image(img, use_column_width=True_)
 
 
-    with features:
-        st.header('dont know if i need this ')
-        st.text('Probably a list of things done')
+    st.write("""
+    ## Motivation behind the project
+    
+    ### *No More Film Scrolling, * find the correct movie in a couple of seconds
+
+    #### This movie recommender system is built to widen your film taste horizons while it takes into accout your demmands
+    
+    """)
+    img = Image.open('images/family_movies.jpg')
+    st.image(img)
+    
 
 
-    with recommenderSystem:
-        st.header('Movie Recommending System!')
-        st.text('Model explanation ')
